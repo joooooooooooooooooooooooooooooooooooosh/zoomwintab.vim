@@ -78,6 +78,14 @@ function! zoomwintab#Toggle()
     endif
 endfunction
 
+function! zoomwintab#Status()
+    if exists('t:zoomwintab')
+        return 'zoomed in'
+    else
+        return ''
+    endif
+endfunction
+
 " commands {{{1
 let &cpo = s:save_cpo
 unlet s:save_cpo
