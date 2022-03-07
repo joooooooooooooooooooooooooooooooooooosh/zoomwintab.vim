@@ -31,9 +31,9 @@ command! ZoomWinTabToggle call zoomwintab#Toggle()
 
 " mappings {{{1
 if g:zoomwintab_remap
-    nnoremap <C-w>o :ZoomWinTabToggle<CR>
-    nnoremap <C-w_o> :ZoomWinTabToggle<CR>
-    nnoremap <C-w><C-o> :ZoomWinTabToggle<CR>
+    nnoremap <silent> <C-w>o :ZoomWinTabToggle<CR>
+    nnoremap <silent> <C-w_o> :ZoomWinTabToggle<CR>
+    nnoremap <silent> <C-w><C-o> :ZoomWinTabToggle<CR>
     for i in range(0,9)
         exe 'nnoremap <C-w>'.i.'o :ZoomWinTabToggle<CR>'
         exe 'nnoremap <C-w>'.i.'<C-o> :ZoomWinTabToggle<CR>'

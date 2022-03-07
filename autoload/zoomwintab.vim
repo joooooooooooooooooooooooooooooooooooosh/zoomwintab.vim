@@ -25,15 +25,12 @@ endfunction
 " ZoomWinTabIn {{{2
 function! zoomwintab#In()
     if exists('*getcmdwintype') && getcmdwintype() != ''
-        echo 'No zoom in command line window'
         return
     endif
     if exists('t:zoomwintab')
-        echo 'Already zoomed in'
         return
     endif
     if winnr('$') == 1
-        echo 'Already only one window'
         return
     endif
     let bufn = bufnr('%')
@@ -50,13 +47,11 @@ function! zoomwintab#In()
         endif
     endif
     call zoomwintab#RefreshAirline()
-    echo 'Zoomed In'
 endfunction
 
 " ZoomWinTabOut {{{2
 function! zoomwintab#Out()
     if !exists('t:zoomwintab')
-        echo 'Already zoomed out'
         return
     endif
     let &stal = t:zoomwintab
@@ -66,7 +61,6 @@ function! zoomwintab#Out()
         exe 'tabnext '.tabpage
     endif
     call zoomwintab#RefreshAirline()
-    echo 'Zoomed Out'
 endfunction
 
 " ZoomWinTabToggle {{{2
@@ -78,6 +72,7 @@ function! zoomwintab#Toggle()
     endif
 endfunction
 
+" ZoomWinTabStatus {{{2
 function! zoomwintab#Status()
     if exists('t:zoomwintab')
         return 'zoomed in'
